@@ -1,0 +1,398 @@
+{
+	"info": {
+		"_postman_id": "fe689246-2cf0-4bbc-8bec-e73b9c15892a",
+		"name": "MessageWay",
+		"description": "![](https://raw.githubusercontent.com/MessageWay/MessageWayPHP/main/examples/assets/logo.png)\n\n# MesseageWay Postman collection\n\nA postman collection for the MessageWay API.\n\n[Official website](https://msgway.com)\n\n[Documents](https://msgway.com/doc)\n\n* * *\n\n![](https://img.shields.io/badge/php-777BB4?style=for-the-badge&logo=php&logoColor=white)\n\nA PHP SDK for the MessageWay API. [github repo](https://github.com/MessageWay/MessageWayPHP)\n\n* * *\n\n![](https://img.shields.io/badge/go-00ADD8?style=for-the-badge&logo=go&logoColor=white)\n\nA Golang SDK for the MessageWay API. [github repo](https://github.com/MessageWay/go-lib)\n\n* * *\n\n![](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)\n\nA NodeJS SDK for the MessageWay API. [github repo](https://github.com/MessageWay/nodejs-lib)\n\n* * *\n\n![](https://img.shields.io/badge/laravel-f4513e?style=for-the-badge&logo=laravel&logoColor=white)\n\nMessageWay laravel package. [github repo](https://github.com/MessageWay/MessageWayLaravel)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "examples",
+			"item": [
+				{
+					"name": "Send by SMS",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Get apiKey from: https://msgway.com/dashboard/projects",
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "fa,en",
+								"key": "accept-language",
+								"type": "text",
+								"value": "{{accept-language}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\": \"\",\n    \"method\": \"sms\",\n    \"templateID\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/send",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send by SMS with params",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Get apiKey from: https://msgway.com/dashboard/projects",
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "fa,en",
+								"key": "accept-language",
+								"type": "text",
+								"value": "{{accept-language}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\": \"\",\n    \"method\": \"sms\",\n    \"templateID\": 6,\n    \"params\": [\n        \"value_1\",\n        \"value_2\",\n        \"value_3\",\n        \"value_4\",\n        \"value_5\"\n    ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/send",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send custom OTP code",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Get apiKey from: https://msgway.com/dashboard/projects",
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "fa,en",
+								"key": "accept-language",
+								"type": "text",
+								"value": "{{accept-language}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\": \"\",\n    \"method\": \"sms\",\n    \"templateID\": 3,\n    \"code\": \"123456\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/send",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send by IVR",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Get apiKey from: https://msgway.com/dashboard/projects",
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "fa,en",
+								"key": "accept-language",
+								"type": "text",
+								"value": "{{accept-language}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\": \"\",\n    \"method\": \"ivr\",\n    \"templateID\": 2\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/send",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send by Whatsapp Messenger",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Get apiKey from: https://msgway.com/dashboard/projects",
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "fa,en",
+								"key": "accept-language",
+								"type": "text",
+								"value": "{{accept-language}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\": \"\",\n    \"method\": \"messenger\",\n    \"templateID\": 3,\n    \"provider\": 1\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/send",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send by Gap Messenger",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Get apiKey from: https://msgway.com/dashboard/projects",
+								"key": "apiKey",
+								"type": "text",
+								"value": "{{apiKey}}"
+							},
+							{
+								"description": "fa,en",
+								"key": "accept-language",
+								"type": "text",
+								"value": "{{accept-language}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mobile\": \"\",\n    \"method\": \"messenger\",\n    \"templateID\": 3,\n    \"provider\": 2\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/send",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"send"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "![](https://raw.githubusercontent.com/MessageWay/MessageWayPHP/main/examples/assets/logo.png)"
+		},
+		{
+			"name": "Send",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "Get apiKey from: https://msgway.com/dashboard/projects",
+						"key": "apiKey",
+						"type": "text",
+						"value": "{{apiKey}}"
+					},
+					{
+						"description": "fa,en",
+						"key": "accept-language",
+						"type": "text",
+						"value": "{{accept-language}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobile\": \"\",\n    \"method\": \"\",\n    \"templateID\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/send",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"send"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerifyOTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "{{apiKey}}",
+						"type": "text"
+					},
+					{
+						"key": "accept-language",
+						"value": "{{accept-language}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mobile\": \"\",\n    \"OTP\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/otp/verify",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"otp",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "apiKey",
+						"value": "{{apiKey}}",
+						"type": "text"
+					},
+					{
+						"key": "accept-language",
+						"value": "{{accept-language}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"OTPReferenceID\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/status",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://api.msgway.com"
+		},
+		{
+			"key": "apiKey",
+			"value": ""
+		},
+		{
+			"key": "accept-language",
+			"value": "fa"
+		}
+	]
+}
